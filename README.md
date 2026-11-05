@@ -1,18 +1,28 @@
-<h1 align="center">Gitlane</h1>
+<div align="center">
 
-<p align="center">
-  Git pane and one-step commands for Claude Code:<br>
-  commit with a suggested message, push, and discard.
-</p>
+# Gitlane
 
-<p align="center">
-  <img src="docs/pane.svg" alt="The Gitlane pane showing the branch graph, header actions and tabs" width="720">
-</p>
+**Git, without leaving the conversation.**<br>
+A pane and one-step commands for [Claude Code](https://claude.com/claude-code): commit with a suggested message, push, and discard.
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-2f9bb5.svg?style=flat-square)](LICENSE)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d9a441.svg?style=flat-square)](#installation)
+[![Version](https://img.shields.io/badge/version-0.12.3-5fb37c.svg?style=flat-square)](.claude-plugin/plugin.json)
+
+[Features](#features) · [Installation](#installation) · [Usage](#usage) · [Commands](#commands)
+
+<br>
+
+<img src="docs/pane.svg" alt="The Gitlane pane: branch graph, header actions and tabs" width="400">
+
+</div>
+
+<br>
 
 ## Features
 
-- **History graph.** Branch lanes, merges, and a marker for what is already on the remote and what only exists locally. Click a commit to read its full message.
-- **Changes tab.** Pick the files to include, write a message or let Claude write it, and commit.
+- **History graph.** Branch lanes, merges, and a marker for what is already on the remote and what only exists locally. Open a commit to read its full message.
+- **Changes tab.** Choose the files to include, write a message or let Claude write it, and commit.
 - **Branches tab.** Switch, create, merge and delete branches, and check out remote branches.
 - **Merge help.** When a merge conflicts, mark files resolved, abort, complete the merge, or hand it to Claude with **Resolve with Claude**.
 - **Always current.** The pane refreshes by itself when Claude edits files, when a turn ends, and every 30 seconds.
@@ -24,7 +34,7 @@ Inside Claude Code:
 
 ```text
 /plugin marketplace add sengermf-1/Gitlane
-/plugin install git-panel@marcos-mods
+/plugin install gitlane@gitlane
 ```
 
 Then start a new session, or run `/reload-plugins`.
@@ -39,7 +49,7 @@ Run `/git` to open the pane. It opens by itself in later sessions too, until you
 
 | Tab | What it does |
 | --- | --- |
-| **History** | The commit graph. Open a commit for its message, copy its hash, load older commits, search by text, author, branch or hash. |
+| **History** | The commit graph. Open a commit for its message, copy its hash, load older commits, and search by text, author, branch or hash. |
 | **Changes** | Every uncommitted file. Select all or none, discard one file, **Discard all…**, then commit. |
 | **Branches** | Local and remote-only branches, with switch, merge and delete. |
 
@@ -49,10 +59,10 @@ The header always shows the current branch, how far ahead or behind it is, and t
 
 In the **Changes** tab, press **✦ Suggest & commit**. Claude reads the diff of the selected files and the conversation, writes the message, and the commit follows at once. You can also type a message yourself and press the commit button.
 
-### Commands
+## Commands
 
 <p align="center">
-  <img src="docs/commands.svg" alt="/git-commit then /git-push, and the two-step /git-discardall" width="720">
+  <img src="docs/commands.svg" alt="/git-commit then /git-push, and the two-step /git-discardall" width="560">
 </p>
 
 | Command | What it does |
@@ -64,7 +74,7 @@ In the **Changes** tab, press **✦ Suggest & commit**. Claude reads the diff of
 
 Each command replies with the result in the conversation, for example `Committed a1b2c3d.`, or with the reason it could not run.
 
-#### About `/git-discardall`
+### About `/git-discardall`
 
 Discarding cannot be undone, and untracked files are **deleted**. So the command works in two steps:
 
@@ -85,4 +95,4 @@ docs/             illustrations used in this README
 
 ## License
 
-See [LICENSE](LICENSE).
+[MIT](LICENSE) © Marcos Senger

@@ -26,13 +26,13 @@ import type { Kit } from './kit'
 import { iconElement, plural, surfaced } from './kit'
 
 // The state this file reads and writes; the scan lists atoms per file.
-const commitDetail = atom({ plugin: 'git-panel', key: 'detail' } as const, null)
-const expanded = atom({ plugin: 'git-panel', key: 'expanded' } as const, null)
-const graph = atom({ plugin: 'git-panel', key: 'graph' } as const, [])
-const graphLimit = atom({ plugin: 'git-panel', key: 'graphLimit' } as const, GRAPH_PAGE)
-const unpushed = atom({ plugin: 'git-panel', key: 'unpushed' } as const, [])
-const view = atom({ plugin: 'git-panel', key: 'view' } as const, 'graph')
-const historyFilter = atom({ plugin: 'git-panel', key: 'historyFilter' } as const, '')
+const commitDetail = atom({ plugin: 'gitlane', key: 'detail' } as const, null)
+const expanded = atom({ plugin: 'gitlane', key: 'expanded' } as const, null)
+const graph = atom({ plugin: 'gitlane', key: 'graph' } as const, [])
+const graphLimit = atom({ plugin: 'gitlane', key: 'graphLimit' } as const, GRAPH_PAGE)
+const unpushed = atom({ plugin: 'gitlane', key: 'unpushed' } as const, [])
+const view = atom({ plugin: 'gitlane', key: 'view' } as const, 'graph')
+const historyFilter = atom({ plugin: 'gitlane', key: 'historyFilter' } as const, '')
 
 // Refs drawn as badges on a row; the rest are counted.
 const BADGES = 2

@@ -11,8 +11,8 @@ import type { Kit } from './views/kit'
 import { hoverSurfaceFor, openSurfaceFor } from './views/kit'
 
 // The state this file reads and writes; the scan lists atoms per file.
-const snapshot = atom({ plugin: 'git-panel', key: 'snapshot' } as const, null)
-const view = atom({ plugin: 'git-panel', key: 'view' } as const, 'graph')
+const snapshot = atom({ plugin: 'gitlane', key: 'snapshot' } as const, null)
+const view = atom({ plugin: 'gitlane', key: 'view' } as const, 'graph')
 
 const PANE = 'git'
 const POLL_MS = 30_000

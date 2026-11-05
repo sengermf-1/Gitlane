@@ -184,7 +184,7 @@ describe('pane', () => {
     await $.command.run(OPEN)
 
     for (const surface of ['terminal', 'desktop'] as const) {
-      const ui = await $.ui.mount({ plugin: 'git-panel', surface, ...PANE })
+      const ui = await $.ui.mount({ plugin: 'gitlane', surface, ...PANE })
       expect(await ui.find({ text: 'origin/main · 2 commits to push · 1 to pull' })).toBeDefined()
       expect(await ui.find({ text: /last push e2e322b/ })).toBeDefined()
       expect(await ui.find({ key: 'pull' })).toBeDefined()
@@ -218,7 +218,7 @@ describe('pane', () => {
     }))
 
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
     expect(await ui.find({ text: /not a git repository/ })).toBeDefined()
     expect(await ui.find({ key: 'init' })).toBeDefined()
   })
@@ -397,7 +397,7 @@ describe('branches and details', () => {
     })
 
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     // The commit the remote holds is tinted; the local-only one is not.
     // The sync rail tells the commit the remote holds from the local-only one.
@@ -430,7 +430,7 @@ describe('branches and details', () => {
     })
 
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
     expect(await ui.find({ key: 'new-branch-name' })).toBeUndefined()
     await ui.press({ key: 'new-branch' })
     expect(await ui.find({ key: 'new-branch-name' })).toBeDefined()
@@ -590,7 +590,7 @@ describe('branches tab and merging', () => {
   test('Branches: a branch opens its actions; Delete asks, saying what is lost', async ($, on) => {
     fakeRepo(on, false)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     await ui.press({ key: 'tab-branches' })
     expect(await ui.find({ text: /^Local · 3$/ })).toBeDefined()
@@ -614,7 +614,7 @@ describe('branches tab and merging', () => {
   test('Branches: the whole row is one target, with a hover tint; Delete is a labelled button', async ($, on) => {
     fakeRepo(on, false)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     await ui.press({ key: 'tab-branches' })
     // The hover tint rides the row as a style, beside its props.
@@ -631,7 +631,7 @@ describe('branches tab and merging', () => {
   test('Branches: Merge asks with the number of commits it brings in', async ($, on) => {
     fakeRepo(on, false)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     await ui.press({ key: 'tab-branches' })
     await ui.press({ key: 'branch:feature' })
@@ -643,7 +643,7 @@ describe('branches tab and merging', () => {
   test('Branches filter: as you type, with a count; Clear brings every branch back', async ($, on) => {
     fakeRepo(on, false)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     await ui.press({ key: 'tab-branches' })
     await ui.input({ key: 'branch-filter', text: 'feat' })
@@ -662,7 +662,7 @@ describe('branches tab and merging', () => {
   test('History filter: matches as a flat list, the graph back once cleared', async ($, on) => {
     fakeRepo(on, false)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     expect(await ui.find({ key: 'commit:aaaaaaa1' })).toBeDefined()
     await ui.input({ key: 'history-filter', text: 'bruno' })
@@ -682,7 +682,7 @@ describe('branches tab and merging', () => {
   test('a merge under way: conflicts to mark resolved, abort, complete', async ($, on) => {
     fakeRepo(on, true)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
 
     expect(await ui.find({ text: /^Merging feature · origin\/main/ })).toBeDefined()
     await ui.press({ key: 'tab-changes' })
@@ -842,7 +842,7 @@ describe('discard', () => {
   test('Discard all asks first, naming what is deleted; Cancel keeps everything', async ($, on) => {
     const calls = fakeDirty(on)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
     await ui.press({ key: 'tab-changes' })
 
     await ui.press({ key: 'discard-all' })
@@ -859,7 +859,7 @@ describe('discard', () => {
   test('a row discards its own file once confirmed', async ($, on) => {
     const calls = fakeDirty(on)
     await $.command.run(OPEN)
-    const ui = await $.ui.mount({ plugin: 'git-panel', surface: 'desktop', ...PANE })
+    const ui = await $.ui.mount({ plugin: 'gitlane', surface: 'desktop', ...PANE })
     await ui.press({ key: 'tab-changes' })
 
     await ui.press({ key: 'discard:notes.md' })

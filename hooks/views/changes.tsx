@@ -8,10 +8,10 @@ import type { Kit } from './kit'
 import { iconElement, plural, surfaced } from './kit'
 
 // The state this file reads and writes; the scan lists atoms per file.
-const body = atom({ plugin: 'git-panel', key: 'body' } as const, '')
-const excluded = atom({ plugin: 'git-panel', key: 'excluded' } as const, [])
-const subject = atom({ plugin: 'git-panel', key: 'subject' } as const, '')
-const discardAsk = atom({ plugin: 'git-panel', key: 'discardAsk' } as const, null)
+const body = atom({ plugin: 'gitlane', key: 'body' } as const, '')
+const excluded = atom({ plugin: 'gitlane', key: 'excluded' } as const, [])
+const subject = atom({ plugin: 'gitlane', key: 'subject' } as const, '')
+const discardAsk = atom({ plugin: 'gitlane', key: 'discardAsk' } as const, null)
 
 const MARK: Record<FileKind, { letter: string; color: string }> = {
   modified: { letter: 'M', color: 'warning' },

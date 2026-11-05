@@ -11,10 +11,10 @@ import type { Kit } from './kit'
 import { plural, surfaced } from './kit'
 
 // The state this file reads and writes; the scan lists atoms per file.
-const branchList = atom({ plugin: 'git-panel', key: 'branchList' } as const, [])
-const confirm = atom({ plugin: 'git-panel', key: 'confirm' } as const, null)
-const openBranch = atom({ plugin: 'git-panel', key: 'openBranch' } as const, null)
-const branchFilter = atom({ plugin: 'git-panel', key: 'branchFilter' } as const, '')
+const branchList = atom({ plugin: 'gitlane', key: 'branchList' } as const, [])
+const confirm = atom({ plugin: 'gitlane', key: 'confirm' } as const, null)
+const openBranch = atom({ plugin: 'gitlane', key: 'openBranch' } as const, null)
+const branchFilter = atom({ plugin: 'gitlane', key: 'branchFilter' } as const, '')
 
 /** Where a branch stands, in words: against its upstream for a local one. */
 function standing(branch: BranchInfo): { text: string; isWarning: boolean } {

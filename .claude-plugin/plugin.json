@@ -1,7 +1,7 @@
 {
-  "name": "git-panel",
+  "name": "gitlane",
   "version": "0.12.3",
-  "description": "Visual git pane: branch graph, branches with merge and delete, commit with a Claude-suggested message, pull and push.",
+  "description": "Git pane and one-step commands for Claude Code: commit with a suggested message, push, and discard.",
   "types": "./types/index.d.ts",
   "author": {
     "name": "Marcos Senger"

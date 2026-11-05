@@ -10,11 +10,11 @@ import type { Kit } from './kit'
 import { iconElement, plural, surfaced } from './kit'
 
 // The state this file reads and writes; the scan lists atoms per file.
-const branches = atom({ plugin: 'git-panel', key: 'branches' } as const, [])
-const busy = atom({ plugin: 'git-panel', key: 'busy' } as const, null)
-const newBranch = atom({ plugin: 'git-panel', key: 'newBranch' } as const, null)
-const notice = atom({ plugin: 'git-panel', key: 'notice' } as const, null)
-const remoteBranches = atom({ plugin: 'git-panel', key: 'remoteBranches' } as const, [])
+const branches = atom({ plugin: 'gitlane', key: 'branches' } as const, [])
+const busy = atom({ plugin: 'gitlane', key: 'busy' } as const, null)
+const newBranch = atom({ plugin: 'gitlane', key: 'newBranch' } as const, null)
+const notice = atom({ plugin: 'gitlane', key: 'notice' } as const, null)
+const remoteBranches = atom({ plugin: 'gitlane', key: 'remoteBranches' } as const, [])
 
 const BUSY_LABEL: Record<Exclude<Busy, null>, string> = {
   suggest: 'Writing a message…',

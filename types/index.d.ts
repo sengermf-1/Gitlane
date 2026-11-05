@@ -121,7 +121,7 @@ export type Notice = { kind: 'ok' | 'error'; text: string } | null
 
 declare module 'claude-code' {
   interface PluginState {
-    'git-panel': {
+    'gitlane': {
       snapshot: GitSnapshot | null
       /** Paths left out of the next commit; everything else is selected. */
       excluded: string[]

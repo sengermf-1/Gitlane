@@ -1,5 +1,5 @@
 {
-  "name": "marcos-mods",
+  "name": "gitlane",
   "owner": { "name": "Marcos Senger" },
-  "plugins": [{ "name": "git-panel", "source": "./" }]
+  "plugins": [{ "name": "gitlane", "source": "./" }]
 }
