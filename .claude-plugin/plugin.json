@@ -1,0 +1,9 @@
+{
+  "name": "git-panel",
+  "version": "0.12.3",
+  "description": "Visual git pane: branch graph, branches with merge and delete, commit with a Claude-suggested message, pull and push.",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "Marcos Senger"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "marcos-mods",
+  "owner": { "name": "Marcos Senger" },
+  "plugins": [{ "name": "git-panel", "source": "./" }]
+}
