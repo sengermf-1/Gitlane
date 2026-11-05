@@ -7,7 +7,7 @@ A pane and one-step commands for [Claude Code](https://claude.com/claude-code): 
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-2f9bb5.svg?style=flat-square)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d9a441.svg?style=flat-square)](#installation)
-[![Version](https://img.shields.io/badge/version-0.12.3-5fb37c.svg?style=flat-square)](.claude-plugin/plugin.json)
+[![Version](https://img.shields.io/badge/version-0.1.0-5fb37c.svg?style=flat-square)](.claude-plugin/plugin.json)
 
 [Features](#features) · [Installation](#installation) · [Usage](#usage) · [Commands](#commands)
 

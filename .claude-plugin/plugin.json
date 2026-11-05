@@ -1,6 +1,6 @@
 {
   "name": "gitlane",
-  "version": "0.12.3",
+  "version": "0.1.0",
   "description": "Git pane and one-step commands for Claude Code: commit with a suggested message, push, and discard.",
   "types": "./types/index.d.ts",
   "author": {
