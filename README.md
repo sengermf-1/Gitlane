@@ -95,4 +95,4 @@ docs/             illustrations used in this README
 
 ## License
 
-[MIT](LICENSE) © Marcos Senger
+[MIT](LICENSE) © Marcos Felipe Senger
